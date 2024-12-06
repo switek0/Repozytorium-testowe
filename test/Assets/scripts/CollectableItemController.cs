@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class CollectableItemController : MonoBehaviour
 {
     public PlayerController playerController;
 
@@ -10,11 +10,15 @@ public class Collectable : MonoBehaviour
     public CapsuleCollider capsuleCollider;
     void Start()
     {
-        
+
     }
-    void Update() => transform.localEulerAngles = new Vector3(transform.localEulerAngles.x,
+    void Update()
+    {
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x,
                                                  transform.localEulerAngles.y + 20 * Time.deltaTime,
                                                  transform.localEulerAngles.z);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
